@@ -9,97 +9,371 @@
     <style>
         body {
             margin: 0;
+            /* padding: 10px; */
         }
-        nav {
-            line-height: 3;
-            height: 90px;
-            background: white;
+
+        h2 {
+            text-indent: 1em;
+        }
+
+        div {
+            text-indent: 1em;
+        }
+
+        /* 导航栏其他实现方式 */
+        ul {
+            list-style-type: none;
+            /* position: fixed; */
+            /* postion: fixed 会影响下拉内容的显示 */
+            top: 0;
             width: 100%;
-            border: 2px, solid;
-            /* border-bottom-color:red; */
-
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            border: 1px solid #e7e7e7;
+            background-color: #f3f3f3;
         }
 
-        nav a {
-            padding: 0 0.5em;
-            /* color: white; */
+        li {
+            float: left;
+            border-right: 1px solid #bbb;
         }
-        .navHeadtitle {
-            color: rgba(102, 102, 102, 1.0);
-            vertical-align: start;
+
+        li:last-child {
+            border-right: none;
+        }
+
+        li a {
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover:not(.active) {
+            color: white;
+            background-color: #111;
+        }
+
+        li a.active {
+            color: white;
+            background-color: #4CAF50;
+        }
+
+        li a,
+        .dropbtn {
+            display: inline-block;
+            color: white;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li.nav_dropdown {
+            display: inline-block;
+        }
+
+        .nav_dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .nav_dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
             text-align: left;
-            font-size: 30px;
         }
-        .navTitle {
-            color: rgba(51, 51, 51, 1.0);
+
+        .nav_dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .nav_dropdown:hover .nav_dropdown-content {
+            display: block;
+        }
+
+        /* 展开折叠按钮 */
+        .fold-box {
+            border: solid 1px #c3c3c3;
+            display: none;
+            margin: 10px;
+        }
+
+        /* 展开折叠 */
+        .fold-button {
+            text-align: left;
+            margin: 0px;
+            padding: 5px;
+        }
+
+        .fold-button span {
+            display: inline-block;
+            padding: 5px 15px;
+            background-color: #4CAF50;
+            color: #fff;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+
+        .fold-box2 {
+            border: solid 1px #c3c3c3;
+            display: none;
+            margin: 10px;
+        }
+
+        /* 展开折叠 */
+        .fold-button2 {
+            text-align: left;
+            margin: 0px;
+            padding: 5px;
+        }
+
+        .fold-button2 span {
+            display: inline-block;
+            padding: 5px 15px;
+            background-color: #4CAF50;
+            color: #fff;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+
+        /* 展开折叠3 */
+        .fold-box3 {
+            border: solid 1px #c3c3c3;
+            display: none;
+            margin: 10px;
+        }
+
+        .fold-button3 {
+            text-align: left;
+            margin: 0px;
+            padding: 5px;
+        }
+
+        .fold-button3 span {
+            display: inline-block;
+            padding: 5px 15px;
+            background-color: #4CAF50;
+            color: #fff;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+
+        .fold-box4 {
+            border: solid 1px #c3c3c3;
+            display: none;
+            margin: 10px;
+        }
+
+        /* 展开折叠 */
+        .fold-button4 {
+            text-align: left;
+            margin: 0px;
+            padding: 5px;
+        }
+
+        .fold-button4 span {
+            display: inline-block;
+            padding: 5px 15px;
+            background-color: #4CAF50;
+            color: #fff;
+            border-radius: 2px;
+            cursor: pointer;
         }
     </style>
 </head>
 
 <body>
-    <!-- 竖着的导航（无序号数字） -->
-    <!-- <nav class="menu">
+
+    <!-- 导航栏 -->
+    <ul>
+        <li><a class="active" href="https://study.qiyun.360.cn" target="_blank">奇舞视频</a></li>
+        <li><a class="harvest" href="#harvest">收获</a></li>
+        <li><a href="#news" href="#news">图文</a></li>
+        <li><a href="#material" href="#material">资料</a></li>
+        <li class="nav_dropdown">
+            <a href="#video" href="#video">视频</a>
+            <div class="nav_dropdown-content">
+                <a href="#playLocalFile">播放本地视频</a>
+                <a href="#recordDownloadVideo">录制下载视频</a>
+                <a href="#playRemoteVideo">播放远端视频</a>
+            </div>
+        </li>
+        <li style="float:right"><a class="active" href="https://study.qiyun.360.cn" target="_blank">关于</a></li>
+    </ul>
+
+    <!-- 用户中心 -->
+    <h2>1. 用户中心</h2>
+    <div class="fold-box">
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li>
+                <strong>
+                    <a href="./qiRegister.html">1.1 注册</a>
+                </strong>
+
+            </li>
         </ul>
-    </nav> -->
+        <ul>
+            <li>
+                <strong>
+                    <a href="./qiLogin.html">1.2 登录</a>
+                </strong>
 
-    <!-- 竖着的导航（有序号数字） -->
-    <!-- <nav class="crumbs">
-        <ol>
-            <li class="crumb"><a href="bikes">Bikes</a></li>
-            <li class="crumb"><a href="bikes/bmx">BMX</a></li>
-            <li class="crumb">Jump Bike 3000</li>
-        </ol>
-    </nav> -->
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <strong>
+                    <a href="./qiSupplyInfo.html">1.3 补全个人信息</a>
+                </strong>
 
-    <!-- 竖着的导航 -->
-    <!-- <nav>
-        <p>收获</p>
-        <p>新闻</p>
-        <p>推荐资料</p>
-        <p>视频</p>
-    </nav> -->
+            </li>
+        </ul>
 
-    <!-- 横着并排的导航 -->
-    <nav class="nav">
-        
-        <a href="https://study.qiyun.360.cn/u/360u3071462423#/study/courses" class="navHeadtitle" target="_blank">奇舞学院</a>
-        <span></span>
-        <a href="#导航1" class="navTitle">收获</a>
-        <a href="#导航2" class="navTitle">图文</a>
-        <a href="#导航3" class="navTitle">资料</a>
-        <a href="#导航3" class="navTitle">视频</a>
-        <hr>
-    </nav>
-
-    <!-- <hr> -->
-    <!-- 注册 -->
-    <h2>用户中心</h2>
-    <div>
-        <a href="./qiRegister.html">注册</a>
-        <a href="./qiLogin.html">登录</a>
-        <a href="./qiSupplyInfo.html">补全个人信息</a>
+    </div>
+    <div class="fold-button">
+        <span class="open">⏬ 用户中心详情</span>
+        <span class="close" style="display:none;">⏫ 用户中心详情</span>
     </div>
 
-    <h2>新闻</h2>
-
+    <!-- 新闻详情 -->
     <!-- TODO: 添加购物或添加轮播图空间 关灯开灯效果 -->
     <!-- 关灯开灯效果还可以使用DarkMode来做 -->
+    <h2>2. 新闻详情</h2>
+    <div class="fold-box2">
+        <ul>
+            <li>
+                <strong>
+                    <a href="./qiNews.html">2.1 新闻详情</a>
+                </strong>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <strong>
+                    <a href="./qiBlogs.html">2.2 博客文章</a>
+                </strong>
+            </li>
+        </ul>
 
-    <a href="./qiNews.html">新闻详情</a>
-    <a href="./qiBlogs.html">博客文章</a>
+    </div>
+    <div class="fold-button2">
+        <span class="open2">⏬ 新闻详情</span>
+        <span class="close2" style="display:none;">⏫ 新闻详情</span>
+    </div>
 
-    <h2>资料</h2>
-        <!-- //TODO: 可结合Node.js 搭建服务部分内容 -->
-    <h2>视频</h2>
-        <!-- FIXME: 注意Chrome正常 Safari 不正常 -->
-        <a href="./qiPlayLocalFile.html">播放本地视频</a>
-        <a href="">录制并播放视频</a>
-        <a href="">录制并下载视频</a>
-        <a href="">播放指定url视频</a>
+
+
+    <h2>3. 资料</h2>
+    <div class="fold-box3">
+        <ul>
+            <li>
+                <strong>
+                    <a href="./qiSumarry.html">3.1 课程小结</a>
+                </strong>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <strong>
+                    <a href="./qiLearningMaterial.html">3.2 学习资料</a>
+                </strong>
+            </li>
+        </ul>
+
+    </div>
+    <div class="fold-button3">
+        <span class="open3">⏬ 资料详情</span>
+        <span class="close3" style="display:none;">⏫ 资料详情</span>
+    </div>
+
+
+
+    <!-- TODO: 可以考虑添加讲师及所讲内容 -->
+    <!-- //TODO: 可结合Node.js 搭建服务部分内容 -->
+    <h2>4. 视频</h2>
+    <div class="fold-box4">
+
+        <ul>
+            <li>
+                <strong>
+                    <a href="./qiPlayLocalFile.html">4.1 播放本地视频</a>
+                </strong>
+            </li>
+        </ul>
+
+        <ul>
+            <li>
+                <strong>
+                    <a href="">4.2 录制并播放视频</a>
+                </strong>
+            </li>
+        </ul>
+
+
+        <ul>
+            <li>
+                <strong>
+                    <a href="">4.3 录制并下载视频</a>
+                </strong>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <strong>
+                    <a href="">4.4 播放指定url视频</a>
+                </strong>
+            </li>
+        </ul>
+    </div>
+    <div class="fold-button4">
+        <span class="open4">⏬ 视频详情</span>
+        <span class="close4" style="display:none;">⏫ 详情</span>
+    </div>
+
+    <!-- 展开折叠 -->
+    <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
+    <script>
+        $(function () {
+            $(".fold-button").click(function () {
+                $(".fold-box").slideToggle("slow");
+                $(".open").toggle();
+                $(".close").toggle();
+            });
+        });
+
+        $(function () {
+            $(".fold-button2").click(function () {
+                $(".fold-box2").slideToggle("slow");
+                $(".open2").toggle();
+                $(".close2").toggle();
+            });
+        });
+
+        $(function () {
+            $(".fold-button3").click(function () {
+                $(".fold-box3").slideToggle("slow");
+                $(".open3").toggle();
+                $(".close3").toggle();
+            });
+        });
+
+        $(function () {
+            $(".fold-button4").click(function () {
+                $(".fold-box4").slideToggle("slow");
+                $(".open4").toggle();
+                $(".close4").toggle();
+            });
+        });
+    </script>
 </body>
 
 </html>
