@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博客文章</title>
+    <style>
+        h2 {
+            font-size: 30px;
+            line-height: 45px;
+        }
+
+        p {
+            font-size: 20px;
+            line-height: 1.6;
+        }
+
+        /* font weight */
+        .w1 {
+            font-weight: 100
+        }
+
+        .w2 {
+            font-weight: 200
+        }
+
+        .w3 {
+            font-weight: 300
+        }
+
+        .w4 {
+            font-weight: 400
+        }
+
+        .w5 {
+            font-weight: 500
+        }
+
+        .w6 {
+            font-weight: 600
+        }
+
+        .w7 {
+            font-weight: 700
+        }
+
+        .w8 {
+            font-weight: 800
+        }
+
+        .w9 {
+            font-weight: 900
+        }
+
+
+        /*  inside、outside 用于指定小标题是在划线内还是外 */
+        /* 用于设置边框，设置第一个和最后一个文字颜色 */
+        li {
+            list-style-position: inside;
+            border-bottom: 1px solid;
+            padding: 0.5em
+        }
+
+        li:first-child {
+            color: coral
+        }
+
+        li:last-child {
+            border-bottom: none;
+        }
+
+        dt {
+            color: coral  
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Font families recap</h2>
+    <p>As we looked at in Fundamental text and font styling, the fonts applied to your HTML can be controlled using the
+        font-family property. This takes one or more font family names, and the browser travels down the list until it
+        finds
+        a font it has available on the system it is running on
+
+    </p>
+
+    <h2>Font weight</h2>
+    <ul>
+        <li class="w1">锦瑟无端五十弦（100）</li>
+        <li class="w2">锦瑟无端五十弦（200）</li>
+        <li class="w3">锦瑟无端五十弦（300）</li>
+        <li class="w4">锦瑟无端五十弦（400-normal）</li>
+        <li class="w5">锦瑟无端五十弦（500）</li>
+        <li class="w6">锦瑟无端五十弦（600）</li>
+        <li class="w7">锦瑟无端五十弦（700-bold）</li>
+        <li class="w8">锦瑟无端五十弦（800）</li>
+        <li class="w9">锦瑟无端五十弦（900）</li>
+    </ul>
+
+    <h2>世界电影票房排行榜</h2>
+
+  <ol>
+    <li>阿凡达</li>
+    <li>泰坦尼克号</li>
+    <li>复仇者联盟</li>
+  </ol>
+
+
+  <h2>霸王别姬</h2>
+  <dl>
+    <dt>导演：</dt>
+    <dd>陈凯歌</dd>
+    <dt>主演：</dt>
+    <dd>张国荣</dd>
+    <dd>张丰毅</dd>
+    <dd>巩俐</dd>
+    <dt>上映日期：</dt>
+    <dd>1993-01-01</dd>
+
+</body>
+
+</html>

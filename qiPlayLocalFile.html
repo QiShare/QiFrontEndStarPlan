@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>本地文件应用</title>
+    <style>
+        video {
+            background-color: rgba(0, 0, 0, .5);
+            width: 100%;
+        }
+    </style>
+
+    <script>
+        let iptFileEl = document.querySelector('input[type="file"]');
+        let videoEl = document.querySelector('video');
+
+        iptFileEl.onchange = e => {
+            let file = iptFileEl.files && iptFileEl.files[0];
+            playFile(file);
+        };
+
+        function playFile(file) {
+            if (file) {
+                let fileReader = new FileReader();
+                fileReader.onload = evt => {
+                    if (FileReader.DONE == fileReader.readyState) {
+                        videoEl.src = fileReader.result;
+                    } else {
+                        console.log('FileReader Error:', evt);
+                    }
+                }
+                fileReader.readAsDataURL(file);
+            } else {
+                videoEl.src = '';
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <video controls></video>
+    <p>
+        MP4：<input type="file" accept="video/*">
+    </p>
+</body>
+
+</html>

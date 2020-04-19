@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>前端星计划首页</title>
+
+    <style>
+        body {
+            margin: 0;
+        }
+        nav {
+            line-height: 3;
+            height: 90px;
+            background: white;
+            width: 100%;
+            border: 2px, solid;
+            /* border-bottom-color:red; */
+
+        }
+
+        nav a {
+            padding: 0 0.5em;
+            /* color: white; */
+        }
+        .navHeadtitle {
+            color: rgba(102, 102, 102, 1.0);
+            vertical-align: start;
+            text-align: left;
+            font-size: 30px;
+        }
+        .navTitle {
+            color: rgba(51, 51, 51, 1.0);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 竖着的导航（无序号数字） -->
+    <!-- <nav class="menu">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav> -->
+
+    <!-- 竖着的导航（有序号数字） -->
+    <!-- <nav class="crumbs">
+        <ol>
+            <li class="crumb"><a href="bikes">Bikes</a></li>
+            <li class="crumb"><a href="bikes/bmx">BMX</a></li>
+            <li class="crumb">Jump Bike 3000</li>
+        </ol>
+    </nav> -->
+
+    <!-- 竖着的导航 -->
+    <!-- <nav>
+        <p>收获</p>
+        <p>新闻</p>
+        <p>推荐资料</p>
+        <p>视频</p>
+    </nav> -->
+
+    <!-- 横着并排的导航 -->
+    <nav class="nav">
+        
+        <a href="https://study.qiyun.360.cn/u/360u3071462423#/study/courses" class="navHeadtitle" target="_blank">奇舞学院</a>
+        <span></span>
+        <a href="#导航1" class="navTitle">收获</a>
+        <a href="#导航2" class="navTitle">图文</a>
+        <a href="#导航3" class="navTitle">资料</a>
+        <a href="#导航3" class="navTitle">视频</a>
+        <hr>
+    </nav>
+
+    <!-- <hr> -->
+    <!-- 注册 -->
+    <h2>用户中心</h2>
+    <div>
+        <a href="./qiRegister.html">注册</a>
+        <a href="./qiLogin.html">登录</a>
+        <a href="./qiSupplyInfo.html">补全个人信息</a>
+    </div>
+
+    <h2>新闻</h2>
+
+    <!-- TODO: 添加购物或添加轮播图空间 关灯开灯效果 -->
+    <!-- 关灯开灯效果还可以使用DarkMode来做 -->
+
+    <a href="./qiNews.html">新闻详情</a>
+    <a href="./qiBlogs.html">博客文章</a>
+
+    <h2>资料</h2>
+        <!-- //TODO: 可结合Node.js 搭建服务部分内容 -->
+    <h2>视频</h2>
+        <!-- FIXME: 注意Chrome正常 Safari 不正常 -->
+        <a href="./qiPlayLocalFile.html">播放本地视频</a>
+        <a href="">录制并播放视频</a>
+        <a href="">录制并下载视频</a>
+        <a href="">播放指定url视频</a>
+</body>
+
+</html>

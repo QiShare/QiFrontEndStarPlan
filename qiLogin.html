@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+    <style>
+        body {
+            /* 可以去除导航栏顶部的间隙 */
+            margin: 0;
+        }
+
+        nav {
+            display: flex;
+            background: lightblue;
+            line-height: 2;
+            justify-content: space-around;
+        }
+
+        @media screen and (max-width: 480px) {
+            nav {
+                flex-direction: column;
+            }
+        }
+
+        /* .nav {
+            background-color: blue;
+            height: 60px; 
+        } */
+
+        /* .registerNav {
+            text-align: center;
+            color: red;
+        } */
+
+        /* 注册输入框部分错误提示 */
+        .error {
+            color: red;
+        }
+
+        input.error {
+            border-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav">
+        <a href="#" class="registerNav">登录</a>
+    </nav>
+
+    <div class="registerPart">
+
+        <!-- 手机号 -->
+        <label>
+            手机号：
+            <input class="error" value="" placeholder="请输入要注册的手机号">
+        </label>
+        <span class="error">
+            请输入标准手机号
+        </span>
+        <br>
+
+        <!-- 密码 -->
+        <label>
+            密码：
+            <input class="error" value="" placeholder="请输入密码">
+        </label>
+        <br>
+
+        <button>登录</button>
+
+    </div>
+</body>
+
+</html>
