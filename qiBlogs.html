@@ -6,6 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>博客文章</title>
     <style>
+        /*         
+        .bodyStyle::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.5;
+            background-image: url("./Resources/qiwutuanbackground.jpeg");
+            background-size: 100%;
+            
+            width: 300px;
+            height: 300px;
+            background-size: 500px 300px;
+        } */
+        div {
+            width: 700px;
+            margin: 0 auto;
+        }
+
+        body {
+            /* 可以去除导航栏顶部的间隙 */
+            margin: 0;
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+
         h2 {
             font-size: 30px;
             line-height: 45px;
@@ -71,53 +96,51 @@
         }
 
         dt {
-            color: coral  
+            color: coral
         }
     </style>
 </head>
 
 <body>
-    <h2>Font families recap</h2>
-    <p>As we looked at in Fundamental text and font styling, the fonts applied to your HTML can be controlled using the
-        font-family property. This takes one or more font family names, and the browser travels down the list until it
-        finds
-        a font it has available on the system it is running on
+    <div class="bodyStyle">
 
-    </p>
+        <h2>Font families recap</h2>
+        <p>As we looked at in Fundamental text and font styling, the fonts applied to your HTML can be controlled using
+            the
+            font-family property. This takes one or more font family names, and the browser travels down the list until
+            it
+            finds
+            a font it has available on the system it is running on
 
-    <h2>Font weight</h2>
-    <ul>
-        <li class="w1">锦瑟无端五十弦（100）</li>
-        <li class="w2">锦瑟无端五十弦（200）</li>
-        <li class="w3">锦瑟无端五十弦（300）</li>
-        <li class="w4">锦瑟无端五十弦（400-normal）</li>
-        <li class="w5">锦瑟无端五十弦（500）</li>
-        <li class="w6">锦瑟无端五十弦（600）</li>
-        <li class="w7">锦瑟无端五十弦（700-bold）</li>
-        <li class="w8">锦瑟无端五十弦（800）</li>
-        <li class="w9">锦瑟无端五十弦（900）</li>
-    </ul>
+        </p>
 
-    <h2>世界电影票房排行榜</h2>
+        <h2>Font weight</h2>
+        <ul>
+            <li class="w1">锦瑟无端五十弦（100）</li>
+            <li class="w2">锦瑟无端五十弦（200）</li>
+            <li class="w3">锦瑟无端五十弦（300）</li>
+            <li class="w4">锦瑟无端五十弦（400-normal）</li>
+            <li class="w5">锦瑟无端五十弦（500）</li>
+            <li class="w6">锦瑟无端五十弦（600）</li>
+            <li class="w7">锦瑟无端五十弦（700-bold）</li>
+            <li class="w8">锦瑟无端五十弦（800）</li>
+            <li class="w9">锦瑟无端五十弦（900）</li>
+        </ul>
 
-  <ol>
-    <li>阿凡达</li>
-    <li>泰坦尼克号</li>
-    <li>复仇者联盟</li>
-  </ol>
+        <h3>参考学习资源（个人推荐）</h3>
+        <ul>
+            <li><a href="https://study.qiyun.360.cn">奇舞学院</a></li>
+            <li><a href="https://weekly.75team.com">奇舞周刊</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/">MDN web docs</a></li>
+            <li>Head First HTML 与 CSS</li>
+            <li>Head First Javascript 程序设计</li>
+            <li>其他博客书籍等</li>
+        </ul>
 
-
-  <h2>霸王别姬</h2>
-  <dl>
-    <dt>导演：</dt>
-    <dd>陈凯歌</dd>
-    <dt>主演：</dt>
-    <dd>张国荣</dd>
-    <dd>张丰毅</dd>
-    <dd>巩俐</dd>
-    <dt>上映日期：</dt>
-    <dd>1993-01-01</dd>
-
+        <a href="./qiNews.html">
+            <h3>新闻信息</h3>
+        </a>
+    </div>
 </body>
 
 </html>

@@ -19,6 +19,11 @@
         div {
             text-indent: 1em;
         }
+        
+        /* .bodyDiv {
+            max-width: 1000px;
+            margin: 0 auto;
+        } */
 
         /* 导航栏其他实现方式 */
         ul {
@@ -210,134 +215,137 @@
         <li style="float:right"><a class="active" href="https://study.qiyun.360.cn" target="_blank">关于</a></li>
     </ul>
 
-    <!-- 用户中心 -->
-    <h2>1. 用户中心</h2>
-    <div class="fold-box">
-        <ul>
+    <div class="bodyDiv">
+        <!-- 用户中心 -->
+        <h2>1. 用户中心</h2>
+        <div class="fold-box">
+            <ul>
+                <li>
+                    <strong>
+                        <a href="./qiRegister.html">1.1 注册</a>
+                    </strong>
+
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <strong>
+                        <a href="./qiLogin.html">1.2 登录</a>
+                    </strong>
+
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <strong>
+                        <a href="./qiSupplyInfo.html">1.3 补全个人信息</a>
+                    </strong>
+
+                </li>
+            </ul>
+
+        </div>
+        <div class="fold-button">
+            <span class="open">⏬ 用户中心详情</span>
+            <span class="close" style="display:none;">⏫ 用户中心详情</span>
+        </div>
+
+
+        <h2>2. 资料</h2>
+        <div class="fold-box3">
+            <ul>
+                <li>
+                    <strong>
+                        <!-- <a href="./qiSumarry.html">2.1 课程小结</a> -->
+                        <a href="./qiCourseList.html">2.1 前端星计划课程列表</a>
+                    </strong>
+                </li>
+            </ul>
+            <!-- <ul>
             <li>
                 <strong>
-                    <a href="./qiRegister.html">1.1 注册</a>
+                    <a href="./qiLearningMaterial.html">2.2 学习资料</a>
                 </strong>
-
             </li>
-        </ul>
-        <ul>
-            <li>
-                <strong>
-                    <a href="./qiLogin.html">1.2 登录</a>
-                </strong>
+        </ul> -->
 
-            </li>
-        </ul>
-        <ul>
-            <li>
-                <strong>
-                    <a href="./qiSupplyInfo.html">1.3 补全个人信息</a>
-                </strong>
+        </div>
+        <div class="fold-button3">
+            <span class="open3">⏬ 资料详情</span>
+            <span class="close3" style="display:none;">⏫ 资料详情</span>
+        </div>
 
-            </li>
-        </ul>
 
+
+        <!-- 新闻详情 -->
+        <!-- TODO: 添加购物或添加轮播图空间 关灯开灯效果 -->
+        <!-- 关灯开灯效果还可以使用DarkMode来做 -->
+        <h2>3. 新闻详情</h2>
+        <div class="fold-box2">
+            <ul>
+                <li>
+                    <strong>
+                        <a href="./qiNews.html">3.1 新闻详情</a>
+                    </strong>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <strong>
+                        <a href="./qiBlogs.html">3.2 博客文章</a>
+                    </strong>
+                </li>
+            </ul>
+
+        </div>
+        <div class="fold-button2">
+            <span class="open2">⏬ 新闻详情</span>
+            <span class="close2" style="display:none;">⏫ 新闻详情</span>
+        </div>
+
+        <!-- TODO: 可以考虑添加讲师及所讲内容 -->
+        <!-- //TODO: 可结合Node.js 搭建服务部分内容 -->
+        <h2>4. 视频</h2>
+        <div class="fold-box4">
+
+            <ul>
+                <li>
+                    <strong>
+                        <a href="./qiPlayLocalFile.html">4.1 播放本地视频</a>
+                    </strong>
+                </li>
+            </ul>
+
+            <ul>
+                <li>
+                    <strong>
+                        <a href="">4.2 录制并播放视频</a>
+                    </strong>
+                </li>
+            </ul>
+
+
+            <ul>
+                <li>
+                    <strong>
+                        <a href="">4.3 录制并下载视频</a>
+                    </strong>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <strong>
+                        <a href="">4.4 播放指定url视频</a>
+                    </strong>
+                </li>
+            </ul>
+        </div>
+        <div class="fold-button4">
+            <span class="open4">⏬ 视频详情</span>
+            <span class="close4" style="display:none;">⏫ 详情</span>
+        </div>
     </div>
-    <div class="fold-button">
-        <span class="open">⏬ 用户中心详情</span>
-        <span class="close" style="display:none;">⏫ 用户中心详情</span>
-    </div>
 
-    <!-- 新闻详情 -->
-    <!-- TODO: 添加购物或添加轮播图空间 关灯开灯效果 -->
-    <!-- 关灯开灯效果还可以使用DarkMode来做 -->
-    <h2>2. 新闻详情</h2>
-    <div class="fold-box2">
-        <ul>
-            <li>
-                <strong>
-                    <a href="./qiNews.html">2.1 新闻详情</a>
-                </strong>
-            </li>
-        </ul>
-        <ul>
-            <li>
-                <strong>
-                    <a href="./qiBlogs.html">2.2 博客文章</a>
-                </strong>
-            </li>
-        </ul>
-
-    </div>
-    <div class="fold-button2">
-        <span class="open2">⏬ 新闻详情</span>
-        <span class="close2" style="display:none;">⏫ 新闻详情</span>
-    </div>
-
-
-
-    <h2>3. 资料</h2>
-    <div class="fold-box3">
-        <ul>
-            <li>
-                <strong>
-                    <a href="./qiSumarry.html">3.1 课程小结</a>
-                </strong>
-            </li>
-        </ul>
-        <ul>
-            <li>
-                <strong>
-                    <a href="./qiLearningMaterial.html">3.2 学习资料</a>
-                </strong>
-            </li>
-        </ul>
-
-    </div>
-    <div class="fold-button3">
-        <span class="open3">⏬ 资料详情</span>
-        <span class="close3" style="display:none;">⏫ 资料详情</span>
-    </div>
-
-
-
-    <!-- TODO: 可以考虑添加讲师及所讲内容 -->
-    <!-- //TODO: 可结合Node.js 搭建服务部分内容 -->
-    <h2>4. 视频</h2>
-    <div class="fold-box4">
-
-        <ul>
-            <li>
-                <strong>
-                    <a href="./qiPlayLocalFile.html">4.1 播放本地视频</a>
-                </strong>
-            </li>
-        </ul>
-
-        <ul>
-            <li>
-                <strong>
-                    <a href="">4.2 录制并播放视频</a>
-                </strong>
-            </li>
-        </ul>
-
-
-        <ul>
-            <li>
-                <strong>
-                    <a href="">4.3 录制并下载视频</a>
-                </strong>
-            </li>
-        </ul>
-        <ul>
-            <li>
-                <strong>
-                    <a href="">4.4 播放指定url视频</a>
-                </strong>
-            </li>
-        </ul>
-    </div>
-    <div class="fold-button4">
-        <span class="open4">⏬ 视频详情</span>
-        <span class="close4" style="display:none;">⏫ 详情</span>
-    </div>
 
     <!-- 展开折叠 -->
     <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>

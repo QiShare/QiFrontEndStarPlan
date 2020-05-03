@@ -1,60 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>补全个人信息</title>
-</head>
-<body>
-   
 
-    国籍：<select>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>补全个人信息</title>
+</head>
+<style>
+  nav {
+    display: flex;
+    background: #f3f3f3;
+    line-height: 2;
+    justify-content: space-around;
+    font-size: 18px;
+  }
+
+  .supplyInfoDiv {
+    margin-left: 62%;
+    margin-top: 8%;
+    padding: 20px;
+    height: 400px;
+    color: black;
+    background-color: white;
+    width: 380px;
+    border-radius: 25px;
+    list-style-type: none;
+  }
+
+  p span {
+    display: inline-block;
+    width: 80px;
+    text-align: left;
+  }
+
+  .submitButton {
+    background-color: rgb(0, 181, 108);
+    color: white;
+    width: 100px;
+    height: 40px;
+    /* 取出按钮显示的灰色边框 */
+    border: none;
+    /* 去除选中的时候的边框 */
+    outline: none;
+    border-radius: 20px;
+    /* position: absolute; left:100px; */
+    position: relative;
+    left: 50px;
+  }
+
+  .skipButton {
+    background-color: rgb(0, 181, 108);
+    color: white;
+    width: 100px;
+    height: 40px;
+    /* 取出按钮显示的灰色边框 */
+    border: none;
+    /* 去除选中的时候的边框 */
+    outline: none;
+    border-radius: 20px;
+    /* position: absolute; left:100px; */
+    position: relative;
+    left: 50px;
+  }
+
+  span {
+    display: inline-block;
+    width: 150px;
+    padding: 4px;
+  }
+
+  .horizontalSpan {
+    display: table-cell;
+    /* float: left; */
+    padding: 20px;
+  }
+
+  textarea {
+    width: 300px;
+  }
+
+  body {
+    /* 可以去除导航栏顶部的间隙 */
+    margin: 0;
+    /* background-image: url("https://p.ssl.qhimg.com/sdm/633_417_/t0111ac7b662effbfa1.jpg"); */
+    background-image: url("./Resources/qiwutuanbackground.jpeg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+
+/* 取出list 前边的黑点 */
+  ul {
+    list-style-type: none;
+  }
+</style>
+
+<body>
+
+  <form action="">
+    <div class="supplyInfoDiv">
+
+      <span>国籍：</span>
+      <select>
         <option>中国</option>
         <option>俄罗斯</option>
         <option>英国</option>
       </select>
-    <br>
-    所在市：
-    <input list="countries">
-    <datalist id="countries">
-      <option>邢台</option>
-      <option>秦皇岛</option>
-      <option>石家庄</option>
-    </datalist>
-    <br>
-    性别：
-    <label><input type="radio" name="sport">男</label>
-    <label><input type="radio" name="sport">女</label>
-    <br>
-    出生日期
-    <input type="date" min="1800-01-01">
-    <br>
+      <br>
 
-    喜欢的水果：
-    <label><input type="checkbox">🍎</label>
-    <label><input type="checkbox">🍌</label>
-    <label><input type="checkbox">🍊</label>
-    <label><input type="checkbox">🍈</label>
-    <label><input type="checkbox">🥝</label>
-    <br>
 
-    喜欢的运动项目：
-    <label><input type="radio" name="sport">⚽</label>
-    <label><input type="radio" name="sport">🏀</label>
-    <label><input type="radio" name="sport">🏸</label>
-    <label><input type="radio" name="sport">🏓</label>
-    <br>
-   
-    
-    <br>
-    个性签名：
-    <br>
-    <textarea placeholder="个性签名"></textarea>
-    <br>
-    
-    
-    <br>
-    <button>保存</button>
-    
+      <span>所在市：</span>
+      <input list="countries">
+      <datalist id="countries">
+        <option>邢台</option>
+        <option>秦皇岛</option>
+        <option>北京</option>
+      </datalist>
+      <br>
+
+      <span>性别：</span>
+      <label><input type="radio" name="sex">男</label>
+      <label><input type="radio" name="sex">女</label>
+      <br>
+
+      <span>出生日期：</span>
+      <input type="date" min="1800-01-01">
+      <br>
+
+      <span>喜欢的水果：</span>
+      <label><input type="checkbox">🍎</label>
+      <label><input type="checkbox">🍌</label>
+      <label><input type="checkbox">🍊</label>
+      <label><input type="checkbox">🍈</label>
+      <label><input type="checkbox">🥝</label>
+      <br>
+
+      <span>喜欢的运动项目：</span>
+      <label><input type="radio" name="sport">⚽</label>
+      <label><input type="radio" name="sport">🏀</label>
+      <label><input type="radio" name="sport">🏸</label>
+      <label><input type="radio" name="sport">🏓</label>
+      <br>
+
+      <!-- 个性签名 -->
+      <!-- <ul>
+        <li>
+          <label>个性签名：</label>
+          <span>
+            <textarea placeholder="个性签名" maxlength="100"></textarea>
+          </span>
+        </li>
+      </ul> -->
+
+      <br>
+      <dl>
+        <dt>
+          <span>个性签名：</span>
+        </dt>
+        <dd>
+          <textarea placeholder="个性签名" rows="3"></textarea>
+        </dd>
+      </dl>
+
+      <br>
+      <!-- <span class="horizontalSpan"> -->
+      <!-- span 块级别 -->
+      <input type="submit" , value="保存" class="submitButton" onclick="saveSupplyInfoFunction()">
+      <input type="submit" , value="跳过" class="skipButton" onclick="skipSupplyInfoFunction()">
+      <!-- </span> -->
+
+
+    </div>
+
+  </form>
+
 </body>
+
+<script>
+
+  // 跳过按钮
+  function skipSupplyInfoFunction() {
+    // 可以跳转
+    window.open("./qiCourseList.html", "", "_self");
+    // 不能跳转 ？
+    // window.location.href = "./qiCourseList.html";
+  }
+
+  // 保存补全信息
+  function saveSupplyInfoFunction() {
+
+    // 获取手机号 密码 用户名 短信验证码
+    let accountName = getElementValue("accountNameMobileNumber");
+    let password = getElementValue("password");
+
+    // 校验输入内容
+    if (!accountName) {
+      alert("请输入用户名");
+      return;
+    }
+    if (!password) {
+      alert("请设置密码");
+      return;
+    }
+    // window.open("./qiCourseList.html", "", "_self");
+    // 不能跳转
+    window.location.href = "./qiCourseList.html";
+
+    // alert(password);
+    // alert(accountName);
+  }
+
+  // 获取对应 id 的值
+  function getElementValue(name) {
+    return document.getElementById(name).value;
+  }
+</script>
+
 </html>

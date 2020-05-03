@@ -1,394 +1,93 @@
-<html lang="zh-cn">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="renderer" content="webkit">
-    <title>奇舞学院 - 用户中心</title>
-    <link rel="stylesheet" href="https://lib.baomitu.com/element-ui/2.2.2/theme-chalk/index.css">
-    <link href="https://s.ssl.qhres.com/static/5dd5596a51365e62/static/css/user_center.css" rel="stylesheet">
+    <title>登陆</title>
     <style type="text/css">
-        @keyframes resizeanim {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 0;
-            }
+        body {
+            /* background-image: url("./Resources/qiwutuanbackground.jpeg"); */
+            background-repeat: no-repeat;
+            background-size: 100%;
         }
 
-        .resize-triggers {
-            animation: 1ms resizeanim;
-            visibility: hidden;
-            opacity: 0;
-        }
-
-        .resize-triggers,
-        .resize-triggers>div,
-        .contract-trigger:before {
-            content: " ";
-            display: block;
+        .login_box::before {
+            content: "";
+            /*-webkit-filter: opacity(50%);  
+    		filter: opacity(50%); */
+            background-image: url("./Resources/qiwutuanbackground.jpeg");
+            opacity: .2; 
+            /* //透明度设置 */
+            /* z-index: -1; */
+            background-size: 500px 300px;
+            width: 500px;
+            height: 300px;
             position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            overflow: hidden;
-            z-index: -1
+            /* //一定要设置position:absolute,这样才能设置z-index，让背景处于内容的下一层 */
+            top: 0px;
+            left: 0px;
+            border-radius: 40px;
         }
 
-        .resize-triggers>div {
-            background: #eee;
-            overflow: auto;
+        .login_box {
+            position: fixed;
+            left: 50%;
+            top: 200px;
+            width: 500px;
+            height: 300px;
+            margin-left: -250px;
+            border-radius: 40px;
+            box-shadow: 10px 10px 5px #888;
+            border: 1px solid #666;
+
+            text-align: center;
         }
 
-        .contract-trigger:before {
-            width: 200%;
-            height: 200%;
+        form {
+            display: inline-block;
+            margin-top: 100px;
         }
+
+        input {
+            display: block;
+            width: 250px;
+            height: 30px;
+            background-color: #888;
+            border: 1px solid #fee;
+            outline: none;
+            border-radius: 10px;
+        }
+
+        input[type="submit"] {
+            width: 100px;
+            height: 30x;
+            margin-left: 70px;
+            background-color: #ccc;
+        }
+
+        span {
+            color: red;
+            font-size: 15px;
+        }
+
+        /* <div class="bg"><div class="content">一些内容 </div></div> */
+    
+
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="Usercenter-header">
-            <header class="Header">
-                <div class="Header-vessel"> <a href="/" class="Header-logo Header-userLogo"></a>
-                    <div class="index-header"> <span class="index-header-tab">课程</span>
-                        <ul class="menu">
-                            <li class="bar bar1"> </li>
-                            <li class="bar bar2"> </li>
-                            <li class="bar bar3"> </li>
-                        </ul>
-                        <div class="tabs-mask"></div>
-                        <div class="tabs">
-                            <div class="tabs-header">
-                                <div class="tabs-item tabs-active" data-index="0">前端<img
-                                        src="https://p3.ssl.qhimg.com/t0188b4bbc169239cc0.png" data-index="0"></div>
-                                <div class="tabs-item" data-index="1">后端<img
-                                        src="https://p3.ssl.qhimg.com/t0188b4bbc169239cc0.png" data-index="1"></div>
-                            </div>
-                            <div class="tabs-content">
-                                <div class="tabs-pane"><a href="/course/festar2020">2020年前端星计划<span
-                                            class="new-course new-course-tag">new</span></a></div><img
-                                    src="https://p3.ssl.qhimg.com/t01950751c8017be36f.png">
-                                <div class="tabs-pane"><a href="/course/festar2018">2018年前端星计划<span
-                                            class="new-course ">new</span></a></div><img
-                                    src="https://p3.ssl.qhimg.com/t01950751c8017be36f.png">
-                                <div class="tabs-pane"><a href="/course/festar2019">2019年前端星计划<span
-                                            class="new-course ">new</span></a></div><img
-                                    src="https://p3.ssl.qhimg.com/t01950751c8017be36f.png">
-                                <div class="tabs-pane"><a href="/course/qiwooshare">奇舞团泛前端分享<span
-                                            class="new-course ">new</span></a><span class="icon-free">免费</span></div>
-                                <img src="https://p3.ssl.qhimg.com/t01950751c8017be36f.png">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="Header-user"> <a class="Header-userInfo--pc">
-                            <div class="Header-userInfo"> <img src="https://p3.ssl.qhimg.com/t01cff731f1a13ad4fc.jpg"
-                                    width="48" height="48" alt="avatar" class="Header-userAvatar"> <span
-                                    class="Header-userName Header-userUserName">360U3071462423</span></div>
-                        </a> <button class="Header-userInfo--mobile"> <i class="icon-menu"></i></button>
-                        <div class="Header-userMenu">
-                            <div class="hidden-mask Header-userMenu-mask"></div>
-                            <div class="hidden-nemu Header-userMenu-content">
-                                <div class="Header-userMenu-head"> <img
-                                        src="https://p3.ssl.qhimg.com/t01cff731f1a13ad4fc.jpg" alt="用户头像"> </div>
-                                <div class="Header-userMenu-name">360U3071462423</div>
-                                <ul class="Header-userMenu-tabs">
-                                    <li class="Header-userMenu-tab"><a href="/u/360u3071462423#/study">学习中心</a> </li>
-                                    <li class="Header-userMenu-tab"><a href="/u/360u3071462423#/payment">我的订单</a> </li>
-                                    <li class="Header-userMenu-tab"><a href="/u/360u3071462423#/setting">我的信息</a> </li>
-                                    <li class="Header-userMenu-tab"><a href="/logout">退出登录</a> </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </header>
-        </div>
-        <div id="fake-body">
-            <div class="Usercenter">
-                <div class="UsercenterHead"></div>
-                <div class="UsercenterContent Block">
-                    <div class="UsercenterStudy">
-                        <div class="guide">
-                            <div class="el-dialog__wrapper guide-dialog" style="display: none;">
-                                <div class="el-dialog" style="margin-top: 15vh;">
-                                    <div class="el-dialog__header"><span class="el-dialog__title"></span><button
-                                            type="button" aria-label="Close" class="el-dialog__headerbtn"><i
-                                                class="el-dialog__close el-icon el-icon-close"></i></button></div>
-                                    <!---->
-                                    <!---->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="UsercenterStudy-left">
-                            <div class="UsercenterStudy-tabs">
-                                <div class="el-tabs el-tabs--top">
-                                    <div class="el-tabs__header is-top">
-                                        <div class="el-tabs__nav-wrap is-top">
-                                            <div class="el-tabs__nav-scroll">
-                                                <div role="tablist" class="el-tabs__nav"
-                                                    style="transform: translateX(0px);">
-                                                    <div class="el-tabs__active-bar is-top"
-                                                        style="width: 89px; transform: translateX(0px);"></div>
-                                                    <div id="tab-courses" aria-controls="pane-courses" role="tab"
-                                                        aria-selected="true" tabindex="0"
-                                                        class="el-tabs__item is-top is-active">我的课程</div>
-                                                    <div id="tab-notes" aria-controls="pane-notes" role="tab"
-                                                        tabindex="-1" class="el-tabs__item is-top">我的笔记</div>
-                                                    <div id="tab-quizs" aria-controls="pane-quizs" role="tab"
-                                                        tabindex="-1" class="el-tabs__item is-top">练习考试</div>
-                                                </div>
-                                            </div>
-                                            <div class="resize-triggers">
-                                                <div class="expand-trigger">
-                                                    <div style="width: 801px; height: 41px;"></div>
-                                                </div>
-                                                <div class="contract-trigger"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="el-tabs__content">
-                                        <div role="tabpanel" id="pane-courses" aria-labelledby="tab-courses"
-                                            class="el-tab-pane"></div>
-                                        <div role="tabpanel" aria-hidden="true" id="pane-notes"
-                                            aria-labelledby="tab-notes" class="el-tab-pane" style="display: none;">
-                                        </div>
-                                        <div role="tabpanel" aria-hidden="true" id="pane-quizs"
-                                            aria-labelledby="tab-quizs" class="el-tab-pane" style="display: none;">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="UsercenterStudy-courses UsercenterStudy-content">
-                                <div class="el-dropdown"><span class="el-dropdown-link el-dropdown-selfdefine"
-                                        aria-haspopup="list" aria-controls="dropdown-menu-8904" role="button"
-                                        tabindex="0">
-                                        近期学习的课程<i class="el-icon-arrow-down el-icon--right"></i></span>
-                                    <ul class="el-dropdown-menu el-popper" id="dropdown-menu-8904"
-                                        style="display: none;">
-                                        <li tabindex="-1" class="el-dropdown-menu__item">近期学习的课程</li>
-                                        <li tabindex="-1" class="el-dropdown-menu__item">未学完的课程</li>
-                                        <li tabindex="-1" class="el-dropdown-menu__item">已学完的课程</li>
-                                    </ul>
-                                </div>
-                                <ul class="courseList">
-                                    <li class="courseList-item">
-                                        <p class="courseList-itemTitle">2020-04-18</p>
-                                        <ul class="courseList-itemDateList">
-                                            <li class="courseList-itemDateItem">
-                                                <div class="courseList-itemLogo"><a href="/course/qiwooshare"><img
-                                                            src="https://p0.ssl.qhimg.com/t01090cdbecd2b64e75.png"
-                                                            alt="课程logo"></a></div>
-                                                <div class="courseList-itemInfo">
-                                                    <div class="courseList-itemInfoTitle"><a href="/course/qiwooshare">
-                                                            奇舞团泛前端分享</a></div>
-                                                    <div class="courseList-itemInfoData"><span>已学0％</span>
-                                                        <span>练习0％</span> <span>笔记0个</span></div>
-                                                    <div class="courseList-itemInfoNext">
-                                                        上次学到 浅谈编译过程和优化Swift项目编译时间
-                                                    </div> <button type="button"
-                                                        class="el-button courseList-itemInfoNextBtn el-button--primary">
-                                                        <!---->
-                                                        <!----><span><a
-                                                                href="/course/qiwooshare/lesson/113">继续学习</a></span></button>
-                                                </div>
-                                                <!---->
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="courseList-item">
-                                        <p class="courseList-itemTitle">2020-04-10</p>
-                                        <ul class="courseList-itemDateList">
-                                            <li class="courseList-itemDateItem">
-                                                <div class="courseList-itemLogo"><a href="/course/festar2020"><img
-                                                            src="https://p5.ssl.qhimg.com/t0121f51ecd2e5a5dbf.png"
-                                                            alt="课程logo"></a></div>
-                                                <div class="courseList-itemInfo">
-                                                    <div class="courseList-itemInfoTitle"><a href="/course/festar2020">
-                                                            2020年前端星计划</a></div>
-                                                    <div class="courseList-itemInfoData"><span>已学0％</span>
-                                                        <span>练习0％</span> <span>笔记87个</span></div>
-                                                    <div class="courseList-itemInfoNext">
-                                                        上次学到 Web 标准：前端的原力
-                                                    </div> <button type="button"
-                                                        class="el-button courseList-itemInfoNextBtn el-button--primary">
-                                                        <!---->
-                                                        <!----><span><a
-                                                                href="/course/festar2020/lesson/121">继续学习</a></span></button>
-                                                </div>
-                                                <!---->
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="UsercenterStudy-infos">
-                            <div class="UsercenterStudy-infos-head"><img
-                                    src="https://p3.ssl.qhimg.com/t01cff731f1a13ad4fc.jpg" alt="用户头像"></div>
-                            <p class="UsercenterStudy-infos-name">360U3071462423</p>
-                            <div class="UsercenterStudy-infos-school"><span>360</span> <span>iOS 开发</span></div>
-                            <div class="UsercenterStudy-infos-study"><span>学时1小时</span> <span>学完0节</span></div>
-                            <div class="UsercenterStudy-infos-ability">
-                                <div class="UsercenterStudy-infos-abilityTitle">领域能力</div>
-                                <div class="UsercenterStudy-infos-abilityContent">
-                                    <p class="UsercenterStudy-infos-abilityContentTitle">前端</p>
-                                    <div class="UsercenterStudy-infos-abilityContentLevel"><span class="step"
-                                            style="background-color: rgb(40, 162, 255);"></span> <span class="step"
-                                            style="background-color: rgb(209, 232, 254);"></span><span class="step"
-                                            style="background-color: rgb(209, 232, 254);"></span><span class="step"
-                                            style="background-color: rgb(209, 232, 254);"></span><span class="step"
-                                            style="background-color: rgb(209, 232, 254);"></span></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <footer class="Footer">
-            <div class="info">
-                <div class="info-item">
-                    <h5 class="title">合作伙伴</h5>
-                    <ul class="links">
-                        <li><a href="//ppt.baomitu.com" class="link link-ppt" target="_blank"></a> </li>
-                        <li><a href="//thinkjs.org" class="link link-thinkjs" target="_blank"></a> </li>
-                        <li><a href="//chimee.org" class="link link-chimee" target="_blank"></a> </li>
-                        <li><a href="//zcfy.cc" class="link link-zcfy" target="_blank"></a> </li>
-                    </ul>
-                </div>
-                <div class="info-item">
-                    <h5 class="title">关注我们</h5> <img src="https://p.ssl.qhimg.com/t01c99306ef0c6b1706.jpg" width="80"
-                        height="80">
-                </div>
-                <div class="info-item">
-                    <h5 class="title">联系我们</h5>
-                    <p>邮箱：<a href="mailto:qiwuxueyuan@360.cn">qiwuxueyuan@360.cn</a></p>
-                </div>
-            </div>
-            <div class="meta">
-                <div class="meta-item">
-                    <p> <span>Copyright © 2014 - 2020</span> <span>奇舞学院</span> <span>京ICP证080047号</span></p>
-                    <p> <img src="https://static.qiyun.360.cn/static/horizon/lib/index/images/home/beian.png" width="24"
-                            height="24"> <span>京公网安备 11000002000006号</span></p>
-                </div>
-            </div>
-        </footer>
+    <div class="login_box">
+        <form action=<?php echo $_SERVER['PHP_SELF'] ?> method="post">
+            <input type="text" name="nickname">
+            <span><?php echo $nameERR; ?></span>
+            <br>
+            <input type="password" name="password">
+            <span><?php echo $passwordERR; ?></span>
+            <br>
+            <input type="submit" value="登陆">
+        </form>
     </div>
-    <script>
-        window.SD = {
-
-            // 用户信息
-            myself: {
-
-                "id": "3367",
-
-                "url": "360u3071462423",
-
-                "open_id": "3071462423",
-
-                "type": "360",
-
-                "name": "王永旺",
-
-                "nickname": "360U3071462423",
-
-                "avatar": "https://p3.ssl.qhimg.com/t01cff731f1a13ad4fc.jpg",
-
-                "gender": "0",
-
-                "birthday": "1993-09-13 00:00:00",
-
-                "address": "北京",
-
-                "status": "2",
-
-                "school": "",
-
-                "grade": "",
-
-                "sid": "",
-
-                "corp": "360",
-
-                "profession": "iOS 开发",
-
-                "phone": "17600189396",
-
-                "email": "wangyongwang@360.cn",
-
-                "qq": "",
-
-                "introduction": "",
-
-                "create_at": "2019-12-12 06:45:01",
-
-                "update_at": "2020-04-03 06:57:54",
-
-                "ip": "",
-
-                "is_admin": "0",
-
-                "is_auth": "1",
-
-                "last_login_at": "2020-04-19 12:32:47",
-
-                "last_login_ip": "10.254.120.199",
-
-                "disable": "0",
-
-                "invite_src": "",
-
-                "learnTime": "1",
-
-                "learnLesson": "0",
-
-                "choose": "[{&quot;level&quot;:1,&quot;name&quot;:&quot;前端&quot;,&quot;done_color&quot;:&quot;#28A2FF&quot;,&quot;undone_color&quot;:&quot;#D1E8FE&quot;}]",
-
-            },
-
-
-            // 用户信息
-            user: {
-
-                "id": "3367",
-
-                "url": "360u3071462423",
-
-                "name": "王永旺",
-
-                "nickname": "360U3071462423",
-
-                "gender": "0",
-
-                "avatar": "https://p3.ssl.qhimg.com/t01cff731f1a13ad4fc.jpg",
-
-                "school": "",
-
-                "grade": "",
-
-                "phone": "17600189396",
-
-            },
-
-            // token信息
-
-            // 用户权限信息
-
-
-            direction: JSON.parse("[{&quot;id&quot;:1,&quot;name&quot;:&quot;前端&quot;,&quot;courses&quot;:[{&quot;id&quot;:21,&quot;url&quot;:&quot;festar2020&quot;,&quot;type&quot;:2,&quot;level&quot;:0,&quot;name&quot;:&quot;2020年前端星计划&quot;,&quot;need_pay&quot;:1},{&quot;id&quot;:7,&quot;url&quot;:&quot;festar2018&quot;,&quot;type&quot;:2,&quot;level&quot;:1,&quot;name&quot;:&quot;2018年前端星计划&quot;,&quot;need_pay&quot;:1},{&quot;id&quot;:17,&quot;url&quot;:&quot;festar2019&quot;,&quot;type&quot;:2,&quot;level&quot;:1,&quot;name&quot;:&quot;2019年前端星计划&quot;,&quot;need_pay&quot;:1},{&quot;id&quot;:19,&quot;url&quot;:&quot;qiwooshare&quot;,&quot;type&quot;:2,&quot;level&quot;:1,&quot;name&quot;:&quot;奇舞团泛前端分享&quot;,&quot;need_pay&quot;:0}]},{&quot;id&quot;:50,&quot;name&quot;:&quot;后端&quot;,&quot;courses&quot;:[{&quot;id&quot;:16,&quot;url&quot;:&quot;hdtzy&quot;,&quot;type&quot;:2,&quot;level&quot;:1,&quot;name&quot;:&quot;后端挑战营&quot;,&quot;need_pay&quot;:0}]}]".replace(/&quot;/g, "\"")),
-
-        }
-    </script>
-    <script src="https://lib.baomitu.com/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://lib.baomitu.com/vue/2.5.16/vue.min.js"></script>
-    <script src="https://lib.baomitu.com/element-ui/2.2.2/index.js"></script>
-    <script src="https://s.ssl.qhres.com/static/3cf8b833dfc3126d/static/js/manifest.js"></script>
-    <script src="https://s.ssl.qhres.com/static/a43d5b52b4ca585f/static/js/vendor.js"></script>
-    <script src="https://s.ssl.qhres.com/static/d66e682eccb298ca/static/js/user_center.js"></script>
 </body>
 
 </html>

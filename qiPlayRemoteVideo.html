@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JS Bin</title>
+</head>
+<style>
+    video {
+        width: 100%;
+        display: block;
+        background: #000;
+    }
+</style>
+
+<body>
+    <video controls preload="auto"></video>
+    <p>倍速播放
+        <select id="selectRate">
+            <option value="1">1x</option>
+            <option value="1.25">1.25x</option>
+            <option value="1.5">1.5x</option>
+            <option value="1.75">1.75x</option>
+            <option value="2.0">2.0x</option>
+            <option value="4.0">4.0x</option>
+        </select>
+    </p>
+</body>
+
+<script>
+    const video = document.querySelector('video');
+    const fetchMp4 = (url, cb) => {
+        const xhr = new XMLHttpRequest();
+        xhr.open('get', url);
+        xhr.responseType = 'arraybuffer';
+        xhr.onload = function () {
+            cb(xhr.response);
+        };
+        xhr.send();
+    };
+
+
+    const assetURL = 'https://nickdesaulniers.github.io/netfix/demo/frag_bunny.mp4';
+    const mimeCodec = 'video/mp4; codecs="avc1.42E01E, mp4a.40.2"';
+
+    // 创建动态媒体源，并关联到video元素上
+    const mediaSource = new MediaSource();
+    video.src = URL.createObjectURL(mediaSource);
+
+    mediaSource.addEventListener('sourceopen', () => {
+        const sourceBuffer = mediaSource.addSourceBuffer(mimeCodec);
+        // 拉取数据
+        fetchMp4(assetURL, buf => {
+            sourceBuffer.addEventListener('updateend', () => {
+                // 媒体流传输完毕
+                mediaSource.endOfStream();
+                // video.play();
+            });
+            // 将数据喂给 Video -- 注意这里只是一次性输入整个MP4数据
+            sourceBuffer.appendBuffer(buf);
+        });
+    });
+
+    // 倍速播放
+    var selectRate = document.getElementById("selectRate");
+    selectRate.addEventListener("change", function() {
+        video.playbackRate = this.value;
+    });
+</script>
+
+</html>

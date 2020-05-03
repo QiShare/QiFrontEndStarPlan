@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>recorded</title>
-
     <style>
         video {
             height: 232px;
@@ -15,7 +14,22 @@
             background: #ccc;
         }
     </style>
+</head>
 
+<body>
+    <video id="preview" autoplay muted></video>
+    <video id="recorded" autoplay loop></video>
+
+    <div>
+        <button id="opencamera">Open camera</button>
+        <button id="closecamera" disabled>Close camera</button>
+        <br />
+        <button id="record" disabled>Start Recording</button>
+        <button id="stoprecord" disabled>Stop Recording</button>
+        <br />
+        <button id="play" disabled>Play</button>
+        <button id="download" disabled>Download</button>
+    </div>
     <script>
         const getUserMediaPromise = options => new Promise((resolve, reject) => {
             const nvgt = window.navigator;
@@ -42,7 +56,8 @@
         const downloadBtn = document.querySelector('#download');
 
         opencameraBtn.onclick = () => getUserMediaPromise({
-            audio: false,
+            audio: true,
+            // audio: false, false时，关闭摄像有用 应该是调用的API的原因
             video: true
         }).then(
             stream => {
@@ -132,24 +147,8 @@
 
 
 
+
     </script>
-</head>
-
-<body>
-
-    <video id="preview" autoplay muted></video>
-    <video id="recorded" autoplay loop></video>
-
-    <div>
-        <button id="opencamera">Open camera</button>
-        <button id="closecamera" disabled>Close camera</button>
-        <br />
-        <button id="record" disabled>Start Recording</button>
-        <button id="stoprecord" disabled>Stop Recording</button>
-        <br />
-        <button id="play" disabled>Play</button>
-        <button id="download" disabled>Download</button>
-    </div>
 </body>
 
 </html>
