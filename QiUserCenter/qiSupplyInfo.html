@@ -88,7 +88,7 @@
     background-size: 100%;
   }
 
-/* 取出list 前边的黑点 */
+  /* 取出list 前边的黑点 */
   ul {
     list-style-type: none;
   }
@@ -187,7 +187,7 @@
 
   // 保存补全信息
   function saveSupplyInfoFunction() {
-    
+
     // 校验填写的个性签名 出生日期等信息
     var personalMemo = getElementValue("personalMemo");
     console.log(personalMemo);
@@ -195,7 +195,7 @@
       alert("个人语录不能为空");
       return;
     }
-    
+
     window.open("../QiCourseListDetail/qiCourseList.html", "", "_self");
     // 不能跳转 ？
     // window.location.href = "../QiCourseListDetail/qiCourseList.html";
