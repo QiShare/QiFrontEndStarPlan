@@ -157,7 +157,7 @@
           <span>个性签名：</span>
         </dt>
         <dd>
-          <textarea placeholder="个性签名" rows="3"></textarea>
+          <textarea id="personalMemo" placeholder="个性签名" rows="3"></textarea>
         </dd>
       </dl>
 
@@ -180,30 +180,25 @@
   // 跳过按钮
   function skipSupplyInfoFunction() {
     // 可以跳转
-    window.open("../qiCourseList.html", "", "_self");
+    window.open("../QiCourseListDetail/qiCourseList.html", "", "_self");
     // 不能跳转 ？
-    // window.location.href = "./qiCourseList.html";
+    // window.location.href = "../QiCourseListDetail/qiCourseList.html";
   }
 
   // 保存补全信息
   function saveSupplyInfoFunction() {
-
-    // 获取手机号 密码 用户名 短信验证码
-    let accountName = getElementValue("accountNameMobileNumber");
-    let password = getElementValue("password");
-
-    // 校验输入内容
-    if (!accountName) {
-      alert("请输入用户名");
+    
+    // 校验填写的个性签名 出生日期等信息
+    var personalMemo = getElementValue("personalMemo");
+    console.log(personalMemo);
+    if (!personalMemo) {
+      alert("个人语录不能为空");
       return;
     }
-    if (!password) {
-      alert("请设置密码");
-      return;
-    }
-    // window.open("./qiCourseList.html", "", "_self");
-    // 不能跳转
-    window.location.href = "../qiCourseList.html";
+    
+    window.open("../QiCourseListDetail/qiCourseList.html", "", "_self");
+    // 不能跳转 ？
+    // window.location.href = "../QiCourseListDetail/qiCourseList.html";
 
     // alert(password);
     // alert(accountName);
